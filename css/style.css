@@ -1,0 +1,312 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+html {
+    height: 100%;
+}
+body {
+    background-image: url('../images/sea.jpg');
+    height: 100%;
+}
+
+.wrapper {
+    min-width: 1150px;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    background-color: #cfd7ff;
+    border: 1px solid #304b64;
+}
+
+.header {
+    height: 70px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.content {
+    padding: 0 0 20px;
+}
+
+.footer {
+    margin: -20px auto 0;
+    min-width: 1150px;
+    max-width: 1200px;
+    height: 20px;
+    position: relative;
+    text-align: center;
+}
+
+.overlay-user-name {
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: table;
+}
+
+.overlay-border {
+    border:  4px solid #304b64;
+}
+
+.userNameInput {
+    margin-bottom: 10px;
+    margin-top: 7px;
+}
+
+.userNameError {
+    font-family: monospace;
+    font-size: 14px;
+    color: red;
+}
+
+.titleTextUserName {
+    font-family: monospace;
+    font-size: 15px;
+}
+
+.overlay-game-over {
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: table;
+}
+
+.middle-overlay {
+    width: 40%;
+    margin: 0 auto;
+    height: auto;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.inner-overlay {
+    height: 70px;
+    width: 400px;
+    background-color: white;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+
+.inner-overlay-user-name {
+    height: auto;
+    width: 400px;
+    background-color: white;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+
+.userNameDiv {
+    width: 90px;
+    overflow: hidden;
+}
+
+.whoseTurnDiv {
+    margin-top: 10px;
+}
+.whoseTurnSpan {
+    font-family: monospace;
+    font-size: 20px;
+    color: #234064;
+}
+
+#overlayText {
+    font-family: monospace;
+    font-size: 20px;
+}
+
+.titleText {
+    margin-top: 10px;
+    font-family: monospace;
+    font-size: 45px;
+}
+
+.titleDiv {
+    height: 70px;
+    text-align: center;
+}
+
+.tableField {
+    height: 300px;
+    width: 300px;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+#compField, #userField {
+    border: 2px solid #304b64;
+    display: inline-block;
+    background-color: white;
+    padding: 1px;
+}
+
+.titleField {
+    width: 100%;
+    float: left;
+    font-family: monospace;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.tableField td {
+    border: 1px solid rgba(155, 173, 184, 0.28);
+    padding-right: 1px;
+    width: 10px;
+}
+
+.clearSea {
+
+}
+
+.ship {
+    background-color: #234064;
+}
+
+.tableFieldDiv {
+    height: 27px;
+    width: 27px;
+}
+
+.breakShip {
+    background-color: #234064;
+    background-image: url('../images/cross.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 27px 27px;
+}
+
+.bombCrash {
+    background-image: url('../images/point.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 8px 8px;
+}
+
+
+
+#overlay-block-game {
+    z-index: 999;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.oneDeck {
+    background-image: url('../images/one_deck.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    height: 30px;
+}
+.twoDeck {
+    background-image: url('../images/two_deck.png');
+    background-repeat: no-repeat;
+
+    background-position: left center;
+    height: 30px;
+}
+.threeDeck {
+    background-image: url('../images/three_deck.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    height: 30px;
+}
+.fourDeck {
+    background-image: url('../images/four_deck.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    height: 30px;
+}
+
+.statisticTable {
+    width: 300px;
+    height: 200px;
+    table-layout:auto;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.statisticDiv {
+    width: 40%;
+    float: right;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.statisticTable tr {
+    height: 10px;
+}
+
+.buttonDiv {
+    height: auto;
+    text-align: center;
+    width: 96%;
+    padding-left: 2%;
+}
+
+.userFieldContainer {
+    width: 32%; text-align: center;
+}
+.compFieldPartContainer {
+    width: 68%; float: right;text-align: center;
+}
+.compFieldContainer {
+    width: 60%; text-align: center;
+}
+

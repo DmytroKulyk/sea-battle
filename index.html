@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Морской бой</title>
+    <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        $(document).ready(function () {
+            onLoad();
+        })
+    </script>
+</head>
+<body>
+<!--Окно отображающееся при окончании игры-->
+<div class="overlay-game-over">
+    <div class="middle-overlay">
+        <div class="inner-overlay overlay-border">
+            <span id="overlayText"></span>
+            <br>
+            <br>
+            <button type="button" onclick="SeaBattle.showUserNameDialog()">Начать заново</button>
+        </div>
+    </div>
+</div>
+
+<!--Имя пользователя-->
+<div class="overlay-user-name">
+    <div class="middle-overlay">
+        <div class="inner-overlay-user-name overlay-border">
+            <span class="titleTextUserName">Введите ваше имя: </span>
+
+            <div id="userNameErrorDiv">
+            </div>
+
+            <input type="text" class="userNameInput">
+            <br>
+            <button type="button" onclick="SeaBattle.startGame()">Начать</button>
+        </div>
+    </div>
+</div>
+<!--блокировка экрана-->
+<div id="overlay-block-game">
+</div>
+
+<div class="wrapper">
+
+    <div class="header">
+        <span class="titleText">Морской бой</span>
+    </div>
+
+    <div class="content">
+        <div class="buttonDiv">
+            <button type="button" onclick="SeaBattle.showUserNameDialog()">Начать игру заново</button>
+            <div class="whoseTurnDiv"><span class="whoseTurnSpan"></span></div>
+            <hr>
+        </div>
+        <div class="compFieldPartContainer">
+            <div class="statisticDiv">
+                <!-- Таблица статистики -->
+                <table class="statisticTable">
+                    <tbody>
+                    <tr>
+                        <th rowspan="2"></th>
+                        <th colspan="2">Осталось кораблей</th>
+                    </tr>
+                    <tr>
+                        <th style="width: 95px;">
+                            <div class="userNameDiv">
+                                <span class="userNameSpan"></span>
+                            </div>
+                        </th>
+                        <th>
+                            Компьютер
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="oneDeck"></div>
+                        </td>
+                        <td><span class="oneDeckSpanUser">0</span></td>
+                        <td><span class="oneDeckSpanComp">0</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="twoDeck"></div>
+                        </td>
+                        <td><span class="twoDeckSpanUser">0</span></td>
+                        <td><span class="twoDeckSpanComp">0</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="threeDeck"></div>
+                        </td>
+                        <td><span class="threeDeckSpanUser">0</span></td>
+                        <td><span class="threeDeckSpanComp">0</span></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 120px;">
+                            <div class="fourDeck"></div>
+                        </td>
+                        <td><span class="fourDeckSpanUser">0</span></td>
+                        <td><span class="fourDeckSpanComp">0</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="compFieldContainer">
+                <span class="titleField">Поле врага :</span>
+                <!-- Поле компьютера -->
+                <div id="compField">
+                </div>
+            </div>
+        </div>
+
+        <div class="userFieldContainer">
+            <span class="titleField">Ваше поле :</span>
+            <!-- Поле компьютера -->
+            <div id="userField">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    Игра написана Баяновым А.
+</div>
+
+</body>
+</html>
