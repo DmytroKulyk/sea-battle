@@ -297,14 +297,12 @@ var SeaBattle = (function () {
         computerShoot(false);
     }
 
-    var holdCompTurn = false; // флаг удержания управления пока ходит комьютер
-    var recurCounter = 0; // счетчик рекурсии, необходим для управления удержания управления
-
     /**
      * Удар компьютера
      * @param recur вызов производится рекурсивно
      */
     function computerShoot(recur) {
+        //вызов функции с задержкой для реалистичности
         setTimeout(function () {
             isUserShoot = false;
 
@@ -326,19 +324,11 @@ var SeaBattle = (function () {
             shoot(coordI, coordJ);
             r = userMap[coordI][coordJ];
             var isHit = r == breakShip;
+            // если было попадание - рекурсивно вызываем computerShoot
             if (isHit) {
-                recurCounter++;
                 computerShoot(true);
-                holdCompTurn = true;
             } else {
-                if (recur) {
-                    recurCounter--;
-                }
-                if (recurCounter == 0) {
-                    holdCompTurn = false;
-                }
-                if (!recur && recurCounter > 0) while (!holdCompTurn) {
-                }
+                // если промах разблокировываем управление
                 isUserShoot = true;
                 $("#overlay-block-game").hide();
                 $('#compField').css('background-color', 'white');
